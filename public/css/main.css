@@ -1,0 +1,43 @@
+.logo {
+  width: 50px;
+}
+.controls {
+  width: 20px;
+}
+.centered {
+  text-align: center;
+  margin: 0 auto;
+}
+
+div.table-scroll, div.well{
+  overflow: auto;
+  height: 500px;
+}
+
+div.well {
+  width: 100%;
+}
+
+th, td.controls {
+  text-align: center;
+}
+
+th.number, td.number {
+  width: 3em;
+}
+
+th.subject, td.subject {
+  width: 22em;
+}
+
+.main-bug-panel {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.bug-info {
+  width: 90%;
+  margin: 1em;
+}
+
+
