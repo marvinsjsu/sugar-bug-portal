@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="col-xs-5">
-      <h4>Details</h4>
+      <h4 class="centered">Bug Details</h4>
       <br/>
       <div id="bug-details" class="well">
 
