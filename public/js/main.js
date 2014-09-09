@@ -7,6 +7,7 @@
     var url = api + bugId;
 
     $.get(url, function(data) {
+      $("#bug-details").empty();
 
       var bugDetails = '<h4 class="centered">Ticket Details</h4>';
       bugDetails += '<ul class="bug-details-list">';
