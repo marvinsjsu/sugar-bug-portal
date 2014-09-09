@@ -25,7 +25,7 @@
                 <td class="status">{{$bug->status}}</td>
                 <td class="type">{{$bug->type}}</td>
                 <td class="priority">{{$bug->priority}}</td>
-                <td class="controls"><a href="" data-id="{{$bug->id}}"><img class="controls" src={{asset('images/eye.png')}}></a></td>
+                <td class="controls"><a class="bug-details-link" href="" data-id="{{$bug->id}}"><img class="controls" src={{asset('images/eye.png')}}></a></td>
               </tr>
             @endforeach
           </tbody>
@@ -33,7 +33,8 @@
       </div>
     </div>
     <div class="col-xs-5">
-      <h4 class="centered">Bug Details</h4>
+      <br/>
+      <br/>
       <br/>
       <div id="bug-details" class="well">
 

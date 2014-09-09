@@ -25,10 +25,8 @@
     <div class="container">
         @yield('content')
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    {{ HTML::script('js/underscore.js'); }}
-    {{ HTML::script('js/backbone.js'); }}
     {{ HTML::script('js/main.js'); }}
   </body>
 </html>

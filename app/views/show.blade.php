@@ -1,9 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-  <div class="panel panel-primary main-bug-panel">
+
+  <div class="panel panel-default main-bug-panel">
     <div class="panel-heading">
-      <h3 class="panel-title">Subject: {{$bug->subject}}</h3>
+      <h3 class="panel-title">Subject:  <span class="subject-title">{{$bug->subject}}</span></h3>
     </div>
     <div class="panel-body">
       <div class="row">

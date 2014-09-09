@@ -114,7 +114,7 @@
     <div class="form-group">
       <label for="description" class="col-lg-1 control-label">Description</label>
       <div class="col-lg-10">
-        <textarea class="form-control" id="description" name="bug[description]" rows="7" cols="15">
+        <textarea class="form-control" id="description" name="bug[description]" rows="7" cols="15" required>
         </textarea>
       </div>
     </div>

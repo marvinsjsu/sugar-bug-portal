@@ -28,7 +28,7 @@ class SugarCall {
   public function getBugs() {
     $url = $this->base_url . "/Bugs/";
     $filter_arguments = array(
-        "max_num" => 50,
+        "max_num" => 100,
         "offset" => 0,
     );
 
