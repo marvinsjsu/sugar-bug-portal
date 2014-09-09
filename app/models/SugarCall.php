@@ -49,7 +49,7 @@ class SugarCall {
         "status" => $options["status"],
         "priority" => $options["priority"],
         "type" => $options["type"],
-        "category" => $options["category"],
+        "product_category" => $options["category"],
         "resolution" => $options["resolution"],
         "description" => $options["description"]
     );
