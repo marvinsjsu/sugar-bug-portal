@@ -15,6 +15,9 @@
         <a class="navbar-brand" href="#"><img class="logo" src={{asset('images/logo.png')}} alt="Logo"></a>
       </div>
       <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li><h3>Bug Portal</h3></li>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>{{ link_to('/bugs/', "All Bugs") }}</li>
           <li>{{ link_to('/bugs/create', "Create New Bug") }}</li>

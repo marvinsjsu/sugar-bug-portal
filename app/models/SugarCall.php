@@ -33,24 +33,33 @@ class SugarCall {
     );
 
     $bugs_decoded = $this->call($url, $this->token->access_token, 'GET', $filter_arguments);
-
     return json_encode($bugs_decoded);
   }
 
   public function getBug($id) {
     $url = $this->base_url . "/Bugs/" . $id;
     $bugs_decoded = $this->call($url, $this->token->access_token, 'GET');
-
     return json_encode($bugs_decoded);
   }
 
   public function createBug($options) {
+    $url = $this->base_url . "/Bugs/";
+    $record_arguments = array(
+        "name" => $options["subject"],
+        "status" => $options["status"],
+        "priority" => $options["priority"],
+        "type" => $options["type"],
+        "category" => $options["category"],
+        "resolution" => $options["resolution"],
+        "description" => $options["description"]
+    );
 
+    $record_response = $this->call($url, $this->token->access_token, 'POST', $record_arguments);
   }
 
+  //copy-and-pasted from example provided @ http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_7.2/70_API/Web_Services/20_Examples/v10/module_filter_GET/
 
   function call($url, $oauthtoken='', $type, $arguments=array(), $encodeData=true, $returnHeaders=false) {
-
     $type = strtoupper($type);
 
      if ($type == 'GET')

@@ -38,7 +38,27 @@ class BugsController extends BaseController {
   }
 
   public function createBug() {
+    $subject = Input::get('subject');
+    $description = Input::get('description');
 
+    $validator = Validator::make(
+      array(
+        'subject' => $subject,
+        'description' => $description
+      ),
+      array(
+        'subject' => 'required',
+        'description' => 'required'
+      )
+    );
+
+    if($validator->fails()) {
+      $messages = $validator->messages();
+      return Redirect::to('/bugs/create')->withErrors($validator);
+    } else {
+      $this->sugar->createBug(Input::all());
+      return Redirect::to('/bugs');
+    }
   }
 
   function sort($bugs) {

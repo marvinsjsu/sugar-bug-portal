@@ -1,13 +1,20 @@
 @extends('layouts.master')
 
 @section('content')
-<form class="form-horizontal col-xs-10">
+{{ Form::open(array('url' => 'bugs/create', 'class' => 'form-horizontal col-xs-10 col-xs-offset-1')) }}
+
   <fieldset>
-    <legend>Create Bug</legend>
+    <legend>Create Bug Ticket</legend>
+
+    {{ $errors->first('subject', '<div class="alert alert-dismissable alert-danger">
+     <button type="button" class="close" data-dismiss="alert">×</button>:message</div>') }}
+    {{ $errors->first('description', '<div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert">×</button>:message</div>') }}
+
     <div class="form-group">
       <label for="subject" class="col-lg-1 control-label">Subject</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="subject" name="bug[subject]" placeholder="subject" required>
+        <input type="text" class="form-control" id="subject" name="subject" placeholder="subject" required>
       </div>
     </div>
     <div class="row">
@@ -15,7 +22,7 @@
         <div class="form-group">
           <label for="status" class="col-lg-2 control-label">Status</label>
           <div class="col-lg-10">
-            <select class="form-control" id="status" name="bug[status]">
+            <select class="form-control" id="status" name="status">
               <option value="New">New</option>
               <option value="Assigned">Assigned</option>
               <option value="Closed">Closed</option>
@@ -27,7 +34,7 @@
         <div class="form-group">
           <label for="source" class="col-lg-2 control-label">Source</label>
           <div class="col-lg-10">
-            <select class="form-control" id="source" name="bug[source]" placeholder="select ... ">
+            <select class="form-control" id="source" name="source" placeholder="select ... ">
               <option value=" "> </option>
               <option value="Internal">Internal</option>
               <option value="Forum">Forum</option>
@@ -39,7 +46,7 @@
         <div class="form-group">
           <label for="resolution" class="col-lg-2 control-label">Resolution</label>
           <div class="col-lg-10">
-            <select class="form-control" id="resolution" name="bug[resolution]" placeholder="select ... ">
+            <select class="form-control" id="resolution" name="resolution" placeholder="select ... ">
               <option value=" "> </option>
               <option value="Accepted">Accepted</option>
               <option value="Duplicate">Assigned</option>
@@ -55,7 +62,7 @@
         <div class="form-group">
           <label for="priority" class="col-lg-2 control-label">Priority</label>
           <div class="col-lg-10">
-            <select class="form-control" id="priority" name="bug[priority]">
+            <select class="form-control" id="priority" name="priority">
               <option value="Urgent">Urgent</option>
               <option value="High">High</option>
               <option value="Medium">Medium</option>
@@ -66,7 +73,7 @@
         <div class="form-group">
           <label for="type" class="col-lg-2 control-label">Type</label>
           <div class="col-lg-10">
-            <select class="form-control" id="type" name="bug[type]">
+            <select class="form-control" id="type" name="type">
               <option value="Defect">Defect</option>
               <option value="Feature">Feature</option>
             </select>
@@ -75,7 +82,7 @@
         <div class="form-group">
           <label for="category" class="col-lg-2 control-label">Category</label>
           <div class="col-lg-10">
-            <select class="form-control" id="category" name="bug[category]">
+            <select class="form-control" id="category" name="category">
               <option value=" "> </option>
               <option value="Accounts">Account</option>
               <option value="Activities">Activities</option>
@@ -114,7 +121,7 @@
     <div class="form-group">
       <label for="description" class="col-lg-1 control-label">Description</label>
       <div class="col-lg-10">
-        <textarea class="form-control" id="description" name="bug[description]" rows="7" cols="15" required>
+        <textarea class="form-control" id="description" name="description" rows="7" cols="15" required>
         </textarea>
       </div>
     </div>
@@ -125,6 +132,6 @@
       </div>
     </div>
   </fieldset>
-</form>
 
+{{ Form::close() }}
 @stop
